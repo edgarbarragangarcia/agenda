@@ -433,7 +433,7 @@
             
             // Si no ha iniciado sesión, redirigir al login
             if (loggedIn !== 'true') {
-                window.location.href = 'index.html';
+                window.location.href = 'public/index.html';
                 return;
             }
             
@@ -450,7 +450,7 @@
                 localStorage.removeItem('email');
                 localStorage.removeItem('rol');
                 // Redirigir al login
-                window.location.href = 'index.html';
+                window.location.href = 'public/index.html';
             });
             
             // Mostrar fecha actual
