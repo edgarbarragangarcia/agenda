@@ -2,11 +2,11 @@
 session_start();
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: dashboard.html");
     exit;
 }
 
-require_once "config/database.php";
+require_once "../config/database.php";
 
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $_SESSION["email"] = $test_users[$username]['email'];
             $_SESSION["rol"] = $test_users[$username]['rol'];
             
-            header("location: index.php");
+            header("location: dashboard.html");
         } else {
             $login_err = "Usuario o contraseña incorrectos.";
         }
@@ -62,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Agenda INGENES</title>
-    <?php include 'includes/modern-styles.php'; ?>
+    <?php include '../includes/modern-styles.php'; ?>
     <style>
         :root {
             --primary-color: #2C3E50;
@@ -297,15 +297,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             
             <div class="download-options">
-                <a href="public/downloads/AgendaINGENES.exe" class="download-option">
+                <a href="../public/downloads/AgendaINGENES.exe" class="download-option">
                     <i class="bi bi-windows download-icon"></i>
                     Windows
                 </a>
-                <a href="public/downloads/AgendaINGENES.dmg" class="download-option">
+                <a href="../public/downloads/AgendaINGENES.dmg" class="download-option">
                     <i class="bi bi-apple download-icon"></i>
                     macOS
                 </a>
-                <a href="public/downloads/AgendaINGENES.apk" class="download-option">
+                <a href="../public/downloads/AgendaINGENES.apk" class="download-option">
                     <i class="bi bi-android2 download-icon"></i>
                     Android
                 </a>
@@ -316,7 +316,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             
             <div class="qr-section">
-                <img src="public/images/qr-code.png" alt="QR Code" class="qr-code">
+                <img src="../public/images/qr-code.png" alt="QR Code" class="qr-code">
                 <p class="mobile-note">Escanea el código QR para descargar la app móvil</p>
             </div>
         </div>

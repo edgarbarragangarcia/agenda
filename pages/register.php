@@ -2,11 +2,11 @@
 session_start();
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["rol"] !== "admin"){
-    header("location: index.php");
+    header("location: ../index.html");
     exit;
 }
 
-require_once "config/database.php";
+require_once "../config/database.php";
 
 $nombre = $email = $password = $confirm_password = $rol = "";
 $nombre_err = $email_err = $password_err = $confirm_password_err = $rol_err = "";
@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_rol = $rol;
             
             if(mysqli_stmt_execute($stmt)){
-                header("location: users.php");
+                header("location: ../users.php");
             } else{
                 echo "Error en el sistema. Por favor intente más tarde.";
             }
@@ -320,7 +320,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     </button>
                                 </div>
                                 <div class="col-md-6 mb-2">
-                                    <a href="users.php" class="btn btn-secondary w-100">
+                                    <a href="../users.php" class="btn btn-secondary w-100">
                                         <i class="bi bi-arrow-left me-2"></i>Volver a Usuarios
                                     </a>
                                 </div>

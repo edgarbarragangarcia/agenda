@@ -2,11 +2,11 @@
 session_start();
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: ../index.html");
     exit;
 }
 
-require_once "config/database.php";
+require_once "../config/database.php";
 
 // Inicializar variables
 $success_msg = $error_msg = "";
@@ -193,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Grupos - Clínica de Fertilidad</title>
-    <?php include 'includes/modern-styles.php'; ?>
+    <?php include '../includes/modern-styles.php'; ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
     <style>
         .day-selector {
@@ -231,7 +231,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <?php include 'includes/navbar.php'; ?>
+    <?php include '../includes/navbar.php'; ?>
 
     <div class="page-header">
         <div class="container">

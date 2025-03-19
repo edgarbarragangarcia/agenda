@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once "config/database.php";
+require_once "../config/database.php";
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: index.html");
     exit;
 }
 ?>
@@ -14,10 +14,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacientes - Clínica de Fertilidad</title>
-    <?php include 'includes/modern-styles.php'; ?>
+    <?php include '../includes/modern-styles.php'; ?>
 </head>
 <body>
-    <?php include 'includes/navbar.php'; ?>
+    <?php include '../includes/navbar.php'; ?>
 
     <div class="page-header animate__animated animate__fadeIn">
         <div class="container">
@@ -220,7 +220,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             const form = document.getElementById('addPatientForm');
             const formData = new FormData(form);
 
-            fetch('includes/save_patient.php', {
+            fetch('../includes/save_patient.php', {
                 method: 'POST',
                 body: formData
             })
@@ -248,7 +248,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
         // Función para cargar datos del paciente para editar
         function editPatient(id) {
-            fetch(`includes/get_patient.php?id=${id}`)
+            fetch(`../includes/get_patient.php?id=${id}`)
             .then(response => response.json())
             .then(data => {
                 const form = document.getElementById('editPatientForm');
@@ -269,7 +269,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             const form = document.getElementById('editPatientForm');
             const formData = new FormData(form);
 
-            fetch('includes/update_patient.php', {
+            fetch('../includes/update_patient.php', {
                 method: 'POST',
                 body: formData
             })
@@ -308,7 +308,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 cancelButtonText: 'Cancelar'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`includes/delete_patient.php?id=${id}`)
+                    fetch(`../includes/delete_patient.php?id=${id}`)
                     .then(response => response.json())
                     .then(data => {
                         if(data.status === 'success') {

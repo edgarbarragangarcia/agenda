@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/", "dest": "/pages/index.html" },
+    { "src": "/dashboard", "dest": "/pages/dashboard.html" },
+    { "src": "/(.*)", "dest": "/pages/$1" }
+  ]
+}

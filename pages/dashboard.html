@@ -11,7 +11,7 @@
     <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Unified Styles -->
-    <link href="public/css/unified-style.css" rel="stylesheet">
+    <link href="../public/css/unified-style.css" rel="stylesheet">
     <!-- Animation Library -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
@@ -182,12 +182,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="citas.php">
                             <i class="bi bi-calendar-event"></i> Citas
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="pacientes.php">
                             <i class="bi bi-people"></i> Pacientes
                         </a>
                     </li>
@@ -246,7 +246,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <a href="#" class="btn btn-primary">
+                                    <a href="citas.php" class="btn btn-primary">
                                         <i class="bi bi-plus-circle me-1"></i> Nueva Cita
                                     </a>
                                 </div>
@@ -303,7 +303,7 @@
                     <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <span><i class="bi bi-calendar me-2"></i>Citas Próximas</span>
-                            <a href="#" class="text-decoration-none">Ver todas</a>
+                            <a href="citas.php" class="text-decoration-none">Ver todas</a>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">
@@ -359,7 +359,7 @@
                     <div class="card animate__animated animate__fadeIn" style="animation-delay: 0.5s;">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <span><i class="bi bi-people me-2"></i>Pacientes Recientes</span>
-                            <a href="#" class="text-decoration-none">Ver todos</a>
+                            <a href="pacientes.php" class="text-decoration-none">Ver todos</a>
                         </div>
                         <div class="card-body p-0">
                             <div class="table-responsive">
@@ -433,7 +433,7 @@
             
             // Si no ha iniciado sesión, redirigir al login
             if (loggedIn !== 'true') {
-                window.location.href = 'public/index.html';
+                window.location.href = 'index.html';
                 return;
             }
             
@@ -450,7 +450,7 @@
                 localStorage.removeItem('email');
                 localStorage.removeItem('rol');
                 // Redirigir al login
-                window.location.href = 'public/index.html';
+                window.location.href = 'index.html';
             });
             
             // Mostrar fecha actual

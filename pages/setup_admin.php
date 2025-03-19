@@ -1,5 +1,5 @@
 <?php
-require_once "config/database.php";
+require_once "../config/database.php";
 
 // Limpiar la tabla de usuarios
 $sql = "TRUNCATE TABLE usuarios";
@@ -39,7 +39,7 @@ if($stmt = mysqli_prepare($conn, $sql)){
             echo "Rol: " . $row['rol'] . "<br>";
         }
         
-        echo "<br><a href='index.php'>Ir al login</a>";
+        echo "<br><a href='index.html'>Ir al login</a>";
     } else{
         echo "Error al crear el usuario administrador: " . mysqli_error($conn);
     }

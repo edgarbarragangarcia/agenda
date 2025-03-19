@@ -2,11 +2,11 @@
 session_start();
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || $_SESSION["rol"] !== "admin"){
-    header("location: index.php");
+    header("location: index.html");
     exit;
 }
 
-require_once "config/database.php";
+require_once "../config/database.php";
 
 // Inicializar variables
 $success_msg = $error_msg = "";
@@ -48,10 +48,10 @@ $result = mysqli_stmt_get_result($stmt);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios - Clínica de Fertilidad</title>
-    <?php include 'includes/modern-styles.php'; ?>
+    <?php include '../includes/modern-styles.php'; ?>
 </head>
 <body>
-    <?php include 'includes/navbar.php'; ?>
+    <?php include '../includes/navbar.php'; ?>
 
     <div class="page-header">
         <div class="container">
