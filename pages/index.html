@@ -16,9 +16,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2C3E50;
-            --secondary-color: #3498DB;
-            --accent-color: #E74C3C;
+            --primary-color: #FF7E1F;
+            --secondary-color: #FF5722;
+            --accent-color: #FF9800;
             --light-gray: #f8f9fa;
             --border-color: #dee2e6;
         }
@@ -28,10 +28,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #FF7E1F, #FF5722, #FF9800);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
             font-family: 'Inter', sans-serif;
             padding: 1rem;
             margin: 0;
+        }
+        
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
         .login-container {
